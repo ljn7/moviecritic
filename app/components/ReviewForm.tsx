@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import ErrorMessage from './ErrorMessage'
 import { Review } from '@/app/types'
 

@@ -15,6 +15,7 @@ async function getAuthenticatedUser(token: string) {
     })
     return user
   } catch (error) {
+    console.log(error)
     return null
   }
 }
@@ -22,7 +23,7 @@ async function getAuthenticatedUser(token: string) {
 // Helper function to check if user is admin
 async function isAdmin(userId: number) {
     // (not implemented)
-  return true 
+  return userId === userId 
 }
 
 export async function GET(

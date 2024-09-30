@@ -159,31 +159,6 @@ export default function MoviePage({ params }: { params: { id: string } }) {
         }
     }
 
-    const handleAddReview = async (newReview: Review) => {
-        try {
-            const response = await fetch('/api/reviews', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newReview),
-            })
-            if (response.ok) {
-                const addedReview = await response.json()
-                setReviews(prevReviews => [addedReview, ...prevReviews])
-                // Update movie's average rating
-                setMovie(prevMovie => prevMovie ? { ...prevMovie, averageRating: addedReview.averageRating } : null)
-            } else {
-                const errorData = await response.json()
-                console.error('Failed to add review:', errorData.error)
-                setError('Failed to add review. Please try again.')
-            }
-        } catch (error) {
-            console.error('Error adding review:', error)
-            setError('An error occurred while adding the review. Please try again.')
-        }
-    }
-
     if (!movie) {
         return <div>Loading...</div>
     }

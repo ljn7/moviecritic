@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { Movie, Review, User, ReviewWithUser } from '@/app/types'
+import { Movie, ReviewWithUser } from '@/app/types'
 
 export default function AddReviewPage() {
     const [movies, setMovies] = useState<Movie[]>([])

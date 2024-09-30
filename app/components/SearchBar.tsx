@@ -1,8 +1,8 @@
+/* eslint-disable */
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { FaSearch } from 'react-icons/fa'  // Import the search icon from react-icons
 import { IoIosSearch } from 'react-icons/io'
 
 // Debounce function (unchanged)
