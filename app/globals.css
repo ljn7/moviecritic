@@ -25,3 +25,58 @@ body {
     text-wrap: balance;
   }
 }
+
+.nav-button {
+    border: 1px solid #bbb4ff;
+    background-color: white;
+    color: #6558f5;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+  }
+  
+  .nav-button:hover {
+    color: #2110da;
+    background-color: #f3f4f6;
+  }
+  
+  .nav-button.blue {
+    background-color: #1d4ed8;
+    color: white;
+  }
+  
+  .nav-button.blue:hover {
+    background-color: #1e40af;
+  }
+  
+  .navbar {
+    background-color: #d6d9df;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .navbar-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-links > * + * {
+    margin-left: 1rem;
+  }
