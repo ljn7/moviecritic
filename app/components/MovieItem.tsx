@@ -66,9 +66,9 @@ export default function MovieItem({ movie, onDelete }: { movie: Movie; onDelete:
                     </div>
                 </form>
             ) : (
-                <>
+                <div title={movie.name}>
                     <Link href={`/movie/${movie.id}`}>
-                    <h2 className="text-2xl text-gray-800 from-neutral-800 pb-5" title={movie.name}>
+                    <h2 className="text-2xl text-gray-800 from-neutral-800 pb-5">
                         {movie.name.length > 21 ? `${movie.name.slice(0, 21)}...` : movie.name}
                     </h2>
                     </Link>
@@ -77,21 +77,20 @@ export default function MovieItem({ movie, onDelete }: { movie: Movie; onDelete:
                     <div className="flex justify-between items-center">
                         <p className="text-lg font-semibold">
                             Rating: {movie.averageRating
-                                ? movie.averageRating % 1 === 0
-                                    ? `${movie.averageRating.toFixed(0)}/10`
-                                    : `${movie.averageRating.toFixed(2)}/10`
+                                ? parseFloat(movie.averageRating.toFixed(2)).toString() + "/10"
                                 : 'N/A'}
                         </p>
+
                         <div className="flex space-x-2"> 
-                            <button onClick={handleEdit} className="text-gray-600 p-2 rounded hover:bg-blue-600">
+                            <button onClick={handleEdit} className="text-gray-500 p-2 rounded-2xl hover:bg-blue-600">
                                 <FiEdit />
                             </button>
-                            <button onClick={handleDelete} className="text-gray-600 p-2 rounded hover:bg-red-600">
+                            <button onClick={handleDelete} className="text-gray-500 p-2 rounded-2xl hover:bg-red-600">
                                 <MdDelete />
                             </button>
                         </div>
                     </div>
-                </>
+                </div>
             )}
         </div>
     )

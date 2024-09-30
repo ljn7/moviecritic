@@ -168,7 +168,11 @@ export default function MoviePage({ params }: { params: { id: string } }) {
             <div>
                 <div className="flex justify-between text-3xl font-bold mb-4 text-">
                     <h1 className="text-gray-600">{movie.name}</h1>
-                    <p className="text-[#6558f5]">{movie.averageRating ? `${movie.averageRating.toFixed(1)} / 10.0` : 'N/A'}</p>
+                    <p className="text-[#6558f5]">
+                        {movie.averageRating
+                            ? parseFloat(movie.averageRating.toFixed(2)).toString() + " / 10"
+                            : 'N/A'}
+                    </p>                
                 </div>
                 <p>Released: {new Date(movie.releaseDate).toLocaleDateString()}</p>
             </div>
@@ -185,7 +189,6 @@ export default function MoviePage({ params }: { params: { id: string } }) {
                                         onSubmit={handleUpdateReview}
                                         onCancel={() => setEditingReview(null)}
                                     />
-                                    <div className="bold">Review Id: {review.id}</div>
                                 </div>
                             ) : (
                                 <p className="text-lg mb-2">{review.comments}</p>
@@ -198,10 +201,10 @@ export default function MoviePage({ params }: { params: { id: string } }) {
                     <div className="flex justify-between items-center mt-2">
                         <p className="text-sm text-gray-600">By {review.user?.username || 'Anonymous'}</p>
                         <div className="flex space-x-2">
-                            <button onClick={() => handleEditReview(review)} className="text-blue-500 hover:text-blue-700">
+                            <button onClick={() => handleEditReview(review)} className="text-gray-500 hover:text-blue-700">
                                 <FiEdit />
                             </button>
-                            <button onClick={() => handleDeleteReview(review.id)} className="text-red-500 hover:text-red-700">
+                            <button onClick={() => handleDeleteReview(review.id)} className="text-gray-500 hover:text-red-700">
                                 <MdDelete />
                             </button>
                         </div>

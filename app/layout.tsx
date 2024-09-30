@@ -30,9 +30,9 @@ export default function RootLayout({
                 </Link>
               </div>
               <div className="flex items-center space-x-4">
-                    <NavButton href="/add-movie">Add New Movie</NavButton>
-                    <NavButton href="/add-review" className="blue">Add New Review</NavButton>
-                    <NavButton href="/search-reviews" className="blue">Search Reviews</NavButton>
+                    <NavButton href="/add-movie">Add new movie</NavButton>
+                    <NavButton href="/add-review" className="blue">Add new review</NavButton>
+                    <NavButton href="/search-reviews" className="blue">Search reviews</NavButton>
                 {isLoggedIn ? (
                   <LogoutButton />
                 ) : (
